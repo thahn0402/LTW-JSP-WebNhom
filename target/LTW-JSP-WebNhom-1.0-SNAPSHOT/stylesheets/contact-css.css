@@ -1,0 +1,126 @@
+.contact{
+    background: url('../img/contact/contact.png');
+}
+.container {
+    width: 65%;
+    background: rgba(248, 248, 255, 0.6);
+    margin: 0 auto;
+    border: solid 1px #E8E8E8dd;
+    border-radius: 15px;
+    /*padding: 25px 15px 25px;*/
+    background-size: cover;
+    padding-bottom: 20px;
+}
+
+.container .header {
+    padding-bottom: 10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.container .alpha {
+    padding: 0;
+    background: #eee;
+    height: 35px;
+    margin-top: 15px;
+    border: solid 1px gainsboro;
+    border-radius: 5px;
+}
+.container .alpha .label{
+ font-size: 125%;
+ margin-top: 2px;
+ margin-left: 10px;
+}
+
+.container input[type=text] {
+    background: #fff;
+     margin-left: 6px;
+    border: none;
+    width: 98%;
+    padding-top: 10px;
+    font-size: 101%;
+    text-align: -webkit-left;
+}
+
+.container .alpha1 {
+    margin: 60px 0 60px;
+    height: 50px;
+}
+.container .alpha1 .label{
+ font-size: 110%
+    }
+
+
+.container .alpha1 .email {
+     font-size: 125%;
+    float: left;
+    background: #eee;
+    padding: 5px 10px;
+    width: 45%;
+    border: solid 1px gainsboro;
+    border-radius: 5px;
+    height: 40px;
+}
+.container input[type1=text] {
+    margin-top: -5px;
+    margin-left: -4px;
+    background: #fff;
+    border: none;
+    width: 102%;
+    padding-top: 10px;
+    font-size: 101%;
+    text-align: -webkit-left;
+}
+
+.container .alpha1 .phone {
+     font-size: 125%;
+    float: right;
+    background: #eee;
+     padding: 5px 10px;
+    width: 45%;
+    border: solid 1px gainsboro;
+    border-radius: 5px;
+    height: 40px;
+}
+
+.container select {
+    width: 98%;
+    margin-left: 6px;
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+    background: #fff;
+    padding-top: 10px;
+    font-size: 101%;
+    text-align: -webkit-left;
+}
+.container .message .label{
+ font-size: 125%;
+    }
+.container .message input[type=text] {
+    background: white;
+}
+
+.container .message {
+    margin-top: 65px;
+    padding: 15px;
+    height: 100px;
+    border: solid 1px gainsboro;
+    border-radius: 5px;
+}
+
+.container .submit {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.container input[type=submit] {
+    background: #333333;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    width: 99%;
+    height: 40px;
+}

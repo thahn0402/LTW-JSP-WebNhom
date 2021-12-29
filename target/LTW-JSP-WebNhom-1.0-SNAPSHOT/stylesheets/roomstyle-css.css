@@ -1,0 +1,127 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montagu Slab', serif;
+}
+
+.container-img {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.container-img img {
+    max-height: 420px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 400%;
+    font-weight: bolder;
+    color:whitesmoke;
+}
+
+
+.room-img, 
+.room-item,
+.rooms-details-view {
+    margin-top: 100px;
+    padding-left: 50px;
+}
+
+.room-img img {
+    border-radius: 0px ;
+    width: 100%;
+    height: 330px;
+}
+
+
+
+.rooms-details {
+    font-size: 20px;
+}
+
+.rooms-details p {
+    border-bottom: 2px solid #000 ;
+}
+
+.rooms-details .icon {
+    width: 50px;
+    display: inline-block;
+    padding-bottom: 30px;
+    color: #ffbf00;
+}
+
+.star-room {
+    list-style-type: none;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.star-room i {
+    font-size: 30px;
+    background-color:#ffbf00;
+    padding: 0 5px;
+}
+
+.rooms-details-view {
+    text-align: center;
+    font-size: 30px;
+    padding-right: 90px;
+    background-color:rgba(0,0,0,0.04);
+    background-clip: content-box;
+}
+
+.rooms-details-view .room-rates {
+    color: #ffbf00;
+    font-weight:900;
+}
+
+.available {
+    border: 3px solid #ffbf00;
+    color:#000;
+    font-size: 20px;
+    padding: 2px 5px;
+}
+
+.rooms-details-view p{
+    padding: 5px 0;;
+}
+
+
+.btn-room {
+    color:#000;
+    background:#ffbf00;
+    text-decoration: none;
+    padding: 5px 28px;
+    border: none;
+}
+
+.btn-room:hover {
+    cursor: pointer;
+    color:#ffbf00;
+    background-color:#000;
+    text-decoration: none;
+}
+
+.pagination {
+    margin: 60px 0;
+}
+
+.page-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.page-link:hover {
+    color: #ffbf00;
+}
+
+.page-link:focus {
+    box-shadow: 0 0 0 0.2rem #ffc107;
+}
