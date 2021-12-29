@@ -88,10 +88,10 @@
             <input type="text" id="usernameorid" name="usernameorid" placeholder="username or id">
         </div>
         <div class="input">
-            <input type="text" id="password" name="password" placeholder="password">
+            <input type="password" id="password" name="password" placeholder="password">
         </div>
         <div class="input">
-            <input type="text" id="confirm" name="confirm" placeholder="confirm password">
+            <input type="password" id="confirm" name="confirm" placeholder="confirm password">
         </div>
         <div class="input">
             <input type="text" id="email" name="email" placeholder="email">

@@ -89,7 +89,7 @@
                    value="<%=request.getParameter("username")%>" <% }%> name="username" placeholder="username or id">
         </div>
         <div class="input">
-            <input type="text" id="password" name="password" placeholder="password">
+            <input type="password" id="password" name="password" placeholder="password">
         </div>
         <div class="sign-in-button">
             <input type="submit" value="LOG IN">
