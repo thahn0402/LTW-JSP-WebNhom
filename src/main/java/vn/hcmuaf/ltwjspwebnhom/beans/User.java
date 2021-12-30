@@ -9,17 +9,16 @@ public class User implements Serializable {
     private String fullname;
     private String email;
     private String phone;
-    private String address;
 
-    public User(){}
+    public User() {
+    }
 
-    public User(String username, String password, String fullname, String email, String phone, String address) {
+    public User(String username, String password, String fullname, String email, String phone) {
         this.username = username;
         this.password = password;
         this.fullname = fullname;
         this.email = email;
         this.phone = phone;
-        this.address = address;
     }
 
     public String getUsername() {
@@ -62,11 +61,4 @@ public class User implements Serializable {
         this.phone = phone;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
 }

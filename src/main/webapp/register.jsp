@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="stylesheets/index-css.css">
     <link rel="stylesheet" href="stylesheets/profile-css.css">
     <link rel="stylesheet" href="stylesheets/register-css.css">
+    <style>
+        <%@ include file="stylesheets/input.css" %>
+    </style>
     <script src="https://kit.fontawesome.com/45d81f7f61.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -85,13 +88,16 @@
             <h1>Register</h1>
         </div>
         <div class="input">
-            <input type="text" id="usernameorid" name="usernameorid" placeholder="username or id">
+            <input type="text" id="username" name="username" placeholder="username or id">
         </div>
         <div class="input">
             <input type="password" id="password" name="password" placeholder="password">
         </div>
         <div class="input">
             <input type="password" id="confirm" name="confirm" placeholder="confirm password">
+        </div>
+        <div class="input">
+            <input type="text" id="fullname" name="fullname" placeholder="full name">
         </div>
         <div class="input">
             <input type="text" id="email" name="email" placeholder="email">

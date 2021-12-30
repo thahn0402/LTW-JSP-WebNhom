@@ -19,14 +19,15 @@ public class Register extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String confirm = request.getParameter("confirm");
+        String fullname = request.getParameter("fullname");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
-        if(UserService.getInstance().register(username,password,confirm,email,phone)){
+        if (UserService.getInstance().register(username, password, fullname, email, phone)) {
             response.sendRedirect("/LTW_JSP_WebNhom_war_exploded/login.jsp");
-        }else {
+        } else {
 //            add error message
-            request.setAttribute("error","Register fall, Username Exist.");
-            request.getRequestDispatcher("register.jsp").forward(request,response);
+            request.setAttribute("error", "Register fall, Username Exist.");
+            request.getRequestDispatcher("register.jsp").forward(request, response);
         }
     }
 }

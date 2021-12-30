@@ -37,9 +37,9 @@ public class UserDao {
         }
     }
 
-    public boolean insertUser(String username, String password) {
+    public boolean insertUser(String username, String password, String fullname, String email, String phone) {
         try {
-            int i = DBConnect.connect().executeUpdate("INSERT INTO user(username, password) VALUE ('" + username + "','" + password + "')");
+            int i = DBConnect.connect().executeUpdate("INSERT INTO user(username, password, fullname, email, phone) VALUE ('" + username + "','" + password + "','" + fullname + "','" + email + "','" + phone + "')");
             return i == 1;
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

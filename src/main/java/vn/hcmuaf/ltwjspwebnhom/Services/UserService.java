@@ -3,8 +3,6 @@ package vn.hcmuaf.ltwjspwebnhom.Services;
 import vn.hcmuaf.ltwjspwebnhom.beans.User;
 import vn.hcmuaf.ltwjspwebnhom.dao.UserDao;
 
-import java.util.HashMap;
-import java.util.Map;
 
 public class UserService {
     private static UserService instance;
@@ -25,8 +23,10 @@ public class UserService {
         return user != null;
     }
 
-    public boolean register(String username, String password, String confirm, String email, String phone) {
-        return UserDao.getInstance().insertUser(username, password);
-
+    public boolean register(String username, String password, String fullname, String email, String phone) {
+        final boolean b = UserDao.getInstance().insertUser(username, password, fullname, email, phone);
+        return b;
     }
+
+
 }

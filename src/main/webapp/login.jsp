@@ -20,6 +20,10 @@
     <link rel="stylesheet" href="stylesheets/index-css.css">
     <link rel="stylesheet" href="stylesheets/profile-css.css">
     <link rel="stylesheet" href="stylesheets/login-css.css">
+
+    <style>
+        <%@ include file="stylesheets/input.css" %>
+    </style>
     <script src="https://kit.fontawesome.com/45d81f7f61.js" crossorigin="anonymous"></script>
 </head>
 <body>

@@ -8,19 +8,17 @@ public class Room implements Serializable {
     private String name;
     private String description;
     private int price;
-    private int quantity;
     private String img;
 
     public Room(){
 
     }
 
-    public Room(String id, String name, String description, int price, int quantity, String img) {
+    public Room(String id, String name, String description, int price, String img) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.quantity = quantity;
         this.img = img;
     }
 
@@ -56,13 +54,6 @@ public class Room implements Serializable {
         this.price = price;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
 
     public String getImg() {
         return img;
