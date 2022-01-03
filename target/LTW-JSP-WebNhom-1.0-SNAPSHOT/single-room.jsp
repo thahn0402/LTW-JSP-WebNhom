@@ -111,7 +111,7 @@
                 <h3 class="room-name">${r.name}</h3>
                 <p class="room-rates">${r.price}$/night</p>
                 <p><span class="available">${r.description}</span></p>
-                <a href="#" class="btn-room">Book Now</a>
+                <a href="newbooking.html" class="btn-room">Book Now</a>
             </div>
         </div>
         </c:forEach>

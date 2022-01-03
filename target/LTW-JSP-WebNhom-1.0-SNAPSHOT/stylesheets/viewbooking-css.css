@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montagu Slab', serif;
+}
+
+#content {
+    
+    padding: 100px 150px;
+    background-color: #ccc;
+   
+}
+
+.card-box {
+    background: white;
+    min-height: 50px;
+    box-shadow: 0 0 35px -5px #9e9c9e;
+    position: relative;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.card-head {
+    border-radius: 2px 2px 0 0;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+    padding: 2px;
+}    
+
+.card-head header {
+    display: inline-block;
+    padding: 11px 20px;
+    vertical-align: middle;
+    line-height: 17px;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.card-body {
+    padding: 10px 24px;
+}
+
+.btn-group {
+    background:#2CA8FF ;
+    text-decoration: none;
+    padding: 0 14px;
+    border: none;
+    border-radius: 2px;
+}
+
+.btn-group:hover,
+.btn-tools:hover {
+    box-shadow: 0 3px 6px rgb(0 0 0 / 20%), 0 3px 6px rgb(0 0 0 / 26%);
+}
+
+.btn-group a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.btn-group .icon {
+    padding-left: 5px;
+    line-height: 34px;
+}
+
+.btn-tools {
+    background:#e91e63 ;
+    text-decoration: none;
+    padding: 0 14px;
+    border: none;
+    border-radius: 2px;
+    float: right;
+}
+
+.btn-tools > a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 34px;
+}
+
+.dropdown-menu.show {
+    display: block;
+    margin-top: 10px;
+    margin-left: -50px;
+}
+
+.btn-tools .icon {
+    display: inline-block;
+    width: 30px;
+}
+
+.search {
+    float: right;
+    text-align: right;
+    margin-top: 60px;
+}
+
+.search input {
+    margin: 0 10px;
+}
+
+.pen {
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 4px 4px;
+    background-color: #9e9c9e;
+    border-radius: 50%;
+    box-shadow: 0 0 15px -5px #9e9c9e;
+}
+
+.trash {
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 4px 4px;
+    background-color: #f96332;
+    border-radius: 50%;
+    box-shadow: 0 0 15px -5px #9e9c9e;
+}
+
+.pen:hover,
+.trash:hover {
+    text-decoration: none;
+}
+
+.user-img img {
+    border-radius: 50%;
+    box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 20%);
+    border: 1px solid #fff;
+}
+
+

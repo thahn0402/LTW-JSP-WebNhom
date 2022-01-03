@@ -6,22 +6,22 @@ import vn.hcmuaf.ltwjspwebnhom.db.JDBIConnector;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class RoomDao {
-    private static RoomDao instance;
+public class ExecutiveRoomDao {
+    private static ExecutiveRoomDao instance;
 
-    private RoomDao() {
+    private ExecutiveRoomDao() {
     }
 
-    public static RoomDao getInstance() {
+    public static ExecutiveRoomDao getInstance() {
         if (instance == null) {
-            instance = new RoomDao();
+            instance = new ExecutiveRoomDao();
         }
         return instance;
     }
 
     public List<Room> getAll() {
         return JDBIConnector.get().withHandle(handle -> {
-            return handle.createQuery("select * from room").mapToBean(Room.class).stream().collect(Collectors.toList());
+            return handle.createQuery("select * from executive_room").mapToBean(Room.class).stream().collect(Collectors.toList());
         });
     }
 }

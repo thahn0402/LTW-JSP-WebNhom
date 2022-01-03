@@ -1,3 +1,10 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+%>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -76,140 +83,38 @@
     <div id="slider">
         <div class="container-img">
             <img src="img/room/slider3.jpg" alt="single room" style="width:100%;">
-            <div class="centered">Superior Room</div>
+            <div class="centered">Executive Room</div>
         </div>
     </div>
 
     <div id="content">
-        <div class="row rooms-list">
-            <div class="col-md-4 room-img">
-                <img src="img/room/superiorroom1.jpg" alt="">
+        <jsp:useBean id="rooms" scope="request" type="java.util.List"/>
+        <c:forEach var="r" items="${rooms}">
+            <div class="row rooms-list">
+                <div class="col-md-4 room-img">
+                    <img src="${r.img}" alt="">
+                </div>
+                <div class="col-md-4 room-item">
+                    <ul class="rooms-details">
+                        <p><i class="icon ti-rss-alt"></i>Wifi</p>
+                        <p><i class="icon ti-desktop"></i>LED TV</p>
+                        <p><i class="icon ti-lock"></i>Security Service</p>
+                        <p><i class="icon ti-timer"></i>24 Hour Room Service</p>
+                        <li class="star-room">
+                            <i class="ti-star"></i>
+                            <i class="ti-star"></i>
+                            <i class="ti-star"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 rooms-details-view">
+                    <h3 class="room-name">${r.name}</h3>
+                    <p class="room-rates">${r.price}$/night</p>
+                    <p><span class="available">${r.description}</span></p>
+                    <a href="newbooking.html" class="btn-room">Book Now</a>
+                </div>
             </div>
-            <div class="col-md-4 room-item">
-                <ul class="rooms-details">
-                    <p><i class="icon ti-rss-alt"></i>Wifi</p>
-                    <p><i class="icon ti-desktop"></i>LED TV</p>
-                    <p><i class="icon ti-lock"></i>Security Service</p>
-                    <p><i class="icon ti-timer"></i>24 Hour Room Service</p>
-                    <li class="star-room">
-                        <i class="ti-star"></i>
-                        <i class="ti-star"></i>
-                        <i class="ti-star"></i>
-                        <i class="ti-star"></i>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4 rooms-details-view">
-                <h3 class="room-name">Superior Room 1</h3>
-                <p class="room-rates">550$/night</p>
-                <p><span class="available">Available</span></p>
-                <a href="newbooking.html" class="btn-room">Book Now</a>
-            </div>
-        </div>
-
-        <div class="row rooms-list">
-            <div class="col-md-4 room-img">
-                <img src="img/room/superiorroom2.jpg" alt="">
-            </div>
-            <div class="col-md-4 room-item">
-                <ul class="rooms-details">
-                    <p><i class="icon ti-rss-alt"></i>Wifi</p>
-                    <p><i class="icon ti-desktop"></i>LED TV</p>
-                    <p><i class="icon ti-lock"></i>Security Service</p>
-                    <p><i class="icon ti-timer"></i>24 Hour Room Service</p>
-                    <li class="star-room">
-                        <i class="ti-star"></i>
-                        <i class="ti-star"></i>
-                        <i class="ti-star"></i>
-                        <i class="ti-star"></i>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4 rooms-details-view">
-                <h3 class="room-name">Superior Room 2</h3>
-                <p class="room-rates">550$/night</p>
-                <p><span class="available">Available</span></p>
-                <a href="newbooking.html" class="btn-room">Book Now</a>
-            </div>
-        </div>
-
-        <div class="row rooms-list">
-            <div class="col-md-4 room-img">
-                <img src="img/room/superiorroom3.jpg" alt="">
-            </div>
-            <div class="col-md-4 room-item">
-                <ul class="rooms-details">
-                    <p><i class="icon ti-rss-alt"></i>Wifi</p>
-                    <p><i class="icon ti-desktop"></i>LED TV</p>
-                    <p><i class="icon ti-lock"></i>Security Service</p>
-                    <p><i class="icon ti-timer"></i>24 Hour Room Service</p>
-                    <li class="star-room">
-                        <i class="ti-star"></i>
-                        <i class="ti-star"></i>
-                        <i class="ti-star"></i>
-                        <i class="ti-star"></i>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4 rooms-details-view">
-                <h3 class="room-name">Superior Room 3</h3>
-                <p class="room-rates">550$/night</p>
-                <p><span class="available">Available</span></p>
-                <a href="newbooking.html" class="btn-room">Book Now</a>
-            </div>
-        </div>
-
-        <div class="row rooms-list">
-            <div class="col-md-4 room-img">
-                <img src="img/room/superiorroom4.jpg" alt="">
-            </div>
-            <div class="col-md-4 room-item">
-                <ul class="rooms-details">
-                    <p><i class="icon ti-rss-alt"></i>Wifi</p>
-                    <p><i class="icon ti-desktop"></i>LED TV</p>
-                    <p><i class="icon ti-lock"></i>Security Service</p>
-                    <p><i class="icon ti-timer"></i>24 Hour Room Service</p>
-                    <li class="star-room">
-                        <i class="ti-star"></i>
-                        <i class="ti-star"></i>
-                        <i class="ti-star"></i>
-                        <i class="ti-star"></i>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4 rooms-details-view">
-                <h3 class="room-name">Superior Room 4</h3>
-                <p class="room-rates">550$/night</p>
-                <p><span class="available">Available</span></p>
-                <a href="newbooking.html" class="btn-room">Book Now</a>
-            </div>
-        </div>
-
-        <div class="row rooms-list">
-            <div class="col-md-4 room-img">
-                <img src="img/room/superiorroom5.jpg" alt="">
-            </div>
-            <div class="col-md-4 room-item">
-                <ul class="rooms-details">
-                    <p><i class="icon ti-rss-alt"></i>Wifi</p>
-                    <p><i class="icon ti-desktop"></i>LED TV</p>
-                    <p><i class="icon ti-lock"></i>Security Service</p>
-                    <p><i class="icon ti-timer"></i>24 Hour Room Service</p>
-                    <li class="star-room">
-                        <i class="ti-star"></i>
-                        <i class="ti-star"></i>
-                        <i class="ti-star"></i>
-                        <i class="ti-star"></i>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4 rooms-details-view">
-                <h3 class="room-name">Superior Room 5</h3>
-                <p class="room-rates">550$/night</p>
-                <p><span class="available">Available</span></p>
-                <a href="newbooking.html" class="btn-room">Book Now</a>
-            </div>
-        </div>
+        </c:forEach>
 
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
