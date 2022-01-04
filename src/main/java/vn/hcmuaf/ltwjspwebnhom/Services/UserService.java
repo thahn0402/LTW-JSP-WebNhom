@@ -18,13 +18,12 @@ public class UserService {
         return instance;
     }
 
-    public boolean checkLogin(String username, String password) {
-        User user = UserDao.getInstance().checkLogin(username, password);
-        return user != null;
+    public User checkLogin(String username, String password) {
+        return UserDao.getInstance().checkLogin(username, password);
     }
 
     public boolean register(String username, String password, String fullname, String email, String phone) {
-        final boolean b = UserDao.getInstance().insertUser(username, password, fullname, email, phone);
+        final boolean b = UserDao.getInstance().register(username, password, fullname, email, phone);
         return b;
     }
 

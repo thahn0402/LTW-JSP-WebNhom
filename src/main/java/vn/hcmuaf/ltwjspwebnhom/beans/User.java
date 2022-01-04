@@ -41,7 +41,7 @@ public class User implements Serializable {
         return fullname;
     }
 
-    public void setFullName(String fullname) {
+    public void setFullname(String fullname) {
         this.fullname = fullname;
     }
 

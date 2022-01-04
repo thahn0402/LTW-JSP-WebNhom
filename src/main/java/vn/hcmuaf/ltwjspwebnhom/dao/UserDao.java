@@ -2,9 +2,16 @@ package vn.hcmuaf.ltwjspwebnhom.dao;
 
 import vn.hcmuaf.ltwjspwebnhom.beans.User;
 import vn.hcmuaf.ltwjspwebnhom.db.DBConnect;
+import vn.hcmuaf.ltwjspwebnhom.db.JDBIConnector;
 
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserDao {
     private static UserDao userDao;
@@ -20,30 +27,49 @@ public class UserDao {
     }
 
     public User checkLogin(String userName, String password) {
-        try {
-            ResultSet resultSet = DBConnect.connect().executeQuery("SELECT  * FROM user where username = '" + userName + "' AND password = '" + password + "'");
-            User user = null;
-            if (resultSet.next()) {
-                user = new User();
-                user.setUsername(resultSet.getString("username"));
-            }
-            if (user != null && user.getUsername().equals(userName) && !resultSet.next()) {
+        Statement statement = DBConnect.getInstance().get();
+        if (statement == null) return null;
+        String sql = "SELECT  * FROM user where username = '" + userName
+                + "' AND password = '" + password + "'";
+        List<User> users = JDBIConnector.get().withHandle(handle -> handle.createQuery("SELECT  * FROM user where username =  ?")
+                .bind(0, userName)
+                .mapToBean(User.class).stream().collect(Collectors.toList()));
+        if (users.size() == 1) {
+            User user = users.get(0);
+            if (user.getPassword().equalsIgnoreCase(password)) {
+                user.setPassword(null);
                 return user;
             }
-            return null;
-        } catch (SQLException | ClassNotFoundException e) {
+        }
+        return null;
+    }
+
+    public boolean register(String username, String password, String fullname, String email, String phone) {
+
+        Statement statement = DBConnect.getInstance().get();
+        if (statement == null) return false;
+        int i = JDBIConnector.get().withHandle(
+                h -> h.createUpdate("INSERT INTO user(username, password, fullname, email, phone) VALUE(?,?,?,?,?)")
+                        .bind(0, username)
+                        .bind(1, hashPassword(password))
+                        .bind(2, fullname)
+                        .bind(3, email)
+                        .bind(4, phone)
+                        .execute());
+        return i == 1;
+    }
+
+    private String hashPassword(String password) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            md.update(password.getBytes());
+            byte byteData[] = md.digest();
+            BigInteger number = new BigInteger(1, byteData);
+            return number.toString(16);
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    public boolean insertUser(String username, String password, String fullname, String email, String phone) {
-        try {
-            int i = DBConnect.connect().executeUpdate("INSERT INTO user(username, password, fullname, email, phone) VALUE ('" + username + "','" + password + "','" + fullname + "','" + email + "','" + phone + "')");
-            return i == 1;
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
 }

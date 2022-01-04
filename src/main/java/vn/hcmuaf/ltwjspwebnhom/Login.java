@@ -1,6 +1,7 @@
 package vn.hcmuaf.ltwjspwebnhom;
 
 import vn.hcmuaf.ltwjspwebnhom.Services.UserService;
+import vn.hcmuaf.ltwjspwebnhom.beans.User;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -18,7 +19,9 @@ public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        if(UserService.getInstance().checkLogin(username, password)){
+        User user = UserService.getInstance().checkLogin(username, password);
+        if(user!=null){
+            //set
             response.sendRedirect("/LTW_JSP_WebNhom_war_exploded/index.jsp");
         } else {
             request.setAttribute("error", "Username or password is incorrect!");
