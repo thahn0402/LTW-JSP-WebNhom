@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%
     String error = (String) request.getAttribute("error");
 %>
@@ -97,7 +99,7 @@
             <input type="password" id="confirm" name="confirm" placeholder="confirm password">
         </div>
         <div class="input">
-            <input type="text" id="fullname" name="fullname" placeholder="full name">
+            <input type="text" id="fullName" name="fullName" placeholder="full name">
         </div>
         <div class="input">
             <input type="text" id="email" name="email" placeholder="email">

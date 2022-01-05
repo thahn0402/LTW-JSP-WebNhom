@@ -5,10 +5,7 @@ import vn.hcmuaf.ltwjspwebnhom.db.DBConnect;
 import vn.hcmuaf.ltwjspwebnhom.db.JDBIConnector;
 
 import java.math.BigInteger;
-import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -44,7 +41,7 @@ public class UserDao {
         return null;
     }
 
-    public boolean register(String username, String password, String fullname, String email, String phone) {
+    public boolean register(String username, String password, String fullName, String email, String phone) {
 
         Statement statement = DBConnect.getInstance().get();
         if (statement == null) return false;
@@ -52,7 +49,7 @@ public class UserDao {
                 h -> h.createUpdate("INSERT INTO user(username, password, fullname, email, phone) VALUE(?,?,?,?,?)")
                         .bind(0, username)
                         .bind(1, hashPassword(password))
-                        .bind(2, fullname)
+                        .bind(2, fullName)
                         .bind(3, email)
                         .bind(4, phone)
                         .execute());
@@ -72,4 +69,9 @@ public class UserDao {
         }
     }
 
+    public List<User> getInfor(User user) {
+        return JDBIConnector.get().withHandle(h -> {
+            return h.createQuery("select * from user where username = '" + user.getUsername()+"'").mapToBean(User.class).stream().collect(Collectors.toList());
+        });
+    }
 }

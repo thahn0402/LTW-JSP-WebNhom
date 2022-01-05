@@ -22,6 +22,8 @@ public class Login extends HttpServlet {
         User user = UserService.getInstance().checkLogin(username, password);
         if(user!=null){
             //set
+            HttpSession session = request.getSession();
+            session.setAttribute("auth", user);
             response.sendRedirect("/LTW_JSP_WebNhom_war_exploded/index.jsp");
         } else {
             request.setAttribute("error", "Username or password is incorrect!");

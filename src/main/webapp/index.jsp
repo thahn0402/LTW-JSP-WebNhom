@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -17,6 +19,7 @@
     <link rel="stylesheet" href="stylesheets/room-css.css">
 </head>
 <body>
+<c:if test="${sessionScope.auth==null}">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top justify-content-center">
     <a class="navbar-brand" href="index.jsp">
         <img src="img/logo/LTW2021.png" alt="Logo" style="width:100px" class="rounded-circle">
@@ -26,48 +29,102 @@
             <a class="nav-link" href="index.jsp">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="about.jsp">About</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="room.html" data-toggle="dropdown">
+            <a class="nav-link dropdown-toggle" href="room.jsp" data-toggle="dropdown">
                 Room & Suites
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="room.html">Rooms</a>
-                <a class="dropdown-item" href="single-room.html">Single Room</a>
-                <a class="dropdown-item" href="double-room.html">Double Room</a>
-                <a class="dropdown-item" href="superior-room.html">Superior Room</a>
-                <a class="dropdown-item" href="family-room.html">Family Room</a>
-                <a class="dropdown-item" href="executive-room.html">Executive Room</a>
-                <a class="dropdown-item" href="vip-suite.html">VIP Suite</a>
+                <a class="dropdown-item" href="room.jsp">Rooms</a>
+                <a class="dropdown-item" href="SingleRoomList">Single Room</a>
+                <a class="dropdown-item" href="DoubleRoomList">Double Room</a>
+                <a class="dropdown-item" href="SuperiorRoomList">Superior Room</a>
+                <a class="dropdown-item" href="FamilyRoomList">Family Room</a>
+                <a class="dropdown-item" href="ExecutiveRoomList">Executive Room</a>
+                <a class="dropdown-item" href="VipSuiteList">VIP Suite</a>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="gallery.html">Gallery</a>
+            <a class="nav-link" href="gallery.jsp">Gallery</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="" data-toggle="dropdown">
+            <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown">
                 Foods
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="breakfast.html">Breakfast</a>
-                <a class="dropdown-item" href="lunch.html">Lunch</a>
-                <a class="dropdown-item" href="dinner.html">Dinner</a>
+                <a class="dropdown-item" href="breakfast.jsp">Breakfast</a>
+                <a class="dropdown-item" href="lunch.jsp">Lunch</a>
+                <a class="dropdown-item" href="dinner.jsp">Dinner</a>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="contact.jsp">Contact</a>
         </li>
         <li>
             <form class="form-inline" action="/action_page.php">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button type="button" class="btn bt-view-all" href="#"><a href="login.jsp"
+                <button type="button" class="btn bt-view-all" href="login.jsp"><a href="login.jsp"
                                                                           style="color: whitesmoke">Log In</a>
                 </button>
             </form>
         </li>
     </ul>
 </nav>
+</c:if>
+<c:if test="${sessionScope.auth!=null}">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top justify-content-center">
+        <a class="navbar-brand" href="index.jsp">
+            <img src="img/logo/LTW2021.png" alt="Logo" style="width:100px" class="rounded-circle">
+        </a>
+        <ul class="navbar-nav ">
+            <li class="nav-item">
+                <a class="nav-link" href="index.jsp">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.jsp">About</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="room.jsp" data-toggle="dropdown">
+                    Room & Suites
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="room.jsp">Rooms</a>
+                    <a class="dropdown-item" href="SingleRoomList">Single Room</a>
+                    <a class="dropdown-item" href="DoubleRoomList">Double Room</a>
+                    <a class="dropdown-item" href="SuperiorRoomList">Superior Room</a>
+                    <a class="dropdown-item" href="FamilyRoomList">Family Room</a>
+                    <a class="dropdown-item" href="ExecutiveRoomList">Executive Room</a>
+                    <a class="dropdown-item" href="VipSuiteList">VIP Suite</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="gallery.jsp">Gallery</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown">
+                    Foods
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="breakfast.jsp">Breakfast</a>
+                    <a class="dropdown-item" href="lunch.jsp">Lunch</a>
+                    <a class="dropdown-item" href="dinner.jsp">Dinner</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.jsp">Contact</a>
+            </li>
+            <li>
+                <form class="form-inline" action="/action_page.php">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button type="button" class="btn bt-view-all" href="admin.jsp"><a href="admin.jsp"
+                                                                              style="color: whitesmoke">My Profile</a>
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+</c:if>
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -136,7 +193,7 @@
                     <img src="img/home/body4.png" alt="Nature">
                     <div class="caption">
                         <h3 style="float: left">Double Room</h3>
-                        <h2 style="float: right;color: goldenrod"View</h2>
+                        <h2 style="float: right;color: goldenrod">View</h2>
                     </div>
                 </a>
             </div>

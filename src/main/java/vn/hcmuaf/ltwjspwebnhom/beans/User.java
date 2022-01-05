@@ -6,19 +6,21 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
     private String username;
     private String password;
-    private String fullname;
+    private String fullName;
     private String email;
     private String phone;
+    private String role;
 
     public User() {
     }
 
-    public User(String username, String password, String fullname, String email, String phone) {
+    public User(String username, String password, String fullName, String email, String phone, String role) {
         this.username = username;
         this.password = password;
-        this.fullname = fullname;
+        this.fullName = fullName;
         this.email = email;
         this.phone = phone;
+        this.role = role;
     }
 
     public String getUsername() {
@@ -37,12 +39,12 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getFullname() {
-        return fullname;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getEmail() {
@@ -61,4 +63,11 @@ public class User implements Serializable {
         this.phone = phone;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 }

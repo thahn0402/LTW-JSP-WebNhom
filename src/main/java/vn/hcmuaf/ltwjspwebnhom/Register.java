@@ -19,7 +19,7 @@ public class Register extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String confirm = request.getParameter("confirm");
-        String fullname = request.getParameter("fullname");
+        String fullname = request.getParameter("fullName");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
         if (UserService.getInstance().register(username, password, fullname, email, phone)) {
