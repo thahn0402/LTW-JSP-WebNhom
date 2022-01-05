@@ -9,8 +9,9 @@ public class Room implements Serializable {
     private String description;
     private int price;
     private String img;
+    private int quantitySold;
 
-    public Room(){
+    public Room() {
 
     }
 
@@ -62,4 +63,17 @@ public class Room implements Serializable {
     public void setImg(String img) {
         this.img = img;
     }
+
+    public int getQuantitySold() {
+        return quantitySold;
+    }
+
+    public void setQuantitySold(int quantitySold) {
+        this.quantitySold = quantitySold;
+    }
+
+    public double total() {
+        return price * quantitySold;
+    }
+
 }

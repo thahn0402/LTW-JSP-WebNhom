@@ -18,9 +18,11 @@ public class ProfileUser extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         User user = UserService.getInstance().checkLogin(username, password);
-        List<User> user1= UserService.getInstance().getInfor(user);
+        List<User> user1 = UserService.getInstance().getInfor(user);
+
         request.setAttribute("user1", user1);
         request.getRequestDispatcher("profileUser.jsp").forward(request, response);
+
     }
 
     @Override

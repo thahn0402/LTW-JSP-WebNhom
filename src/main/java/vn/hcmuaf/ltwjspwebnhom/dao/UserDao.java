@@ -71,7 +71,7 @@ public class UserDao {
 
     public List<User> getInfor(User user) {
         return JDBIConnector.get().withHandle(h -> {
-            return h.createQuery("select * from user where username = '" + user.getUsername()+"'").mapToBean(User.class).stream().collect(Collectors.toList());
+            return h.createQuery("select * from user where username = ?").bind(0, user.getUsername()).mapToBean(User.class).stream().collect(Collectors.toList());
         });
     }
 }
