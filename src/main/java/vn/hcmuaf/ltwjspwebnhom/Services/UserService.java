@@ -3,6 +3,7 @@ package vn.hcmuaf.ltwjspwebnhom.Services;
 import vn.hcmuaf.ltwjspwebnhom.beans.User;
 import vn.hcmuaf.ltwjspwebnhom.dao.UserDao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -29,6 +30,8 @@ public class UserService {
         return b;
     }
 
-    public List<User> getInfor(User user){ return UserDao.getInstance().getInfor(user);}
+    public User getInfor(String username) {
+        return UserDao.getInstance().getInfor(username);
+    }
 
 }

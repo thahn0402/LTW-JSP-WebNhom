@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%
     request.setCharacterEncoding("UTF-8");
@@ -56,7 +56,7 @@
                 <a class="nav-link" href="gallery.jsp">Gallery</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                     Foods
                 </a>
                 <div class="dropdown-menu">
@@ -72,7 +72,8 @@
                 <form class="form-inline" action="/action_page.php">
                     <input class="form-control mr-sm-2" type="text" placeholder="Search">
                     <button type="button" class="btn bt-view-all" href="login.jsp"><a href="login.jsp"
-                                                                                      style="color: whitesmoke">Log In</a>
+                                                                                      style="color: whitesmoke">Log
+                        In</a>
                     </button>
                 </form>
             </li>
@@ -109,7 +110,7 @@
                 <a class="nav-link" href="gallery.jsp">Gallery</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                     Foods
                 </a>
                 <div class="dropdown-menu">
@@ -125,7 +126,8 @@
                 <form class="form-inline" action="/action_page.php">
                     <input class="form-control mr-sm-2" type="text" placeholder="Search">
                     <button type="button" class="btn bt-view-all" href="admin.jsp"><a href="admin.jsp"
-                                                                                      style="color: whitesmoke">My Profile</a>
+                                                                                      style="color: whitesmoke">My
+                        Profile</a>
                     </button>
                 </form>
             </li>
@@ -133,73 +135,72 @@
     </nav>
 </c:if>
 <div class="container-img">
-    <img src="img/about/img3.png" alt="profile-img1" style="width:100%; height: 480px">
+    <img src="img/about/img4.png" alt="profile-img1" style="width:100%; height: 480px">
 </div>
-<jsp:useBean id="user1" scope="request" type="java.util.List"/>
-<:c:forEach var="u" items="${user1}">
-<div class="row">
-    <div class="col-sm-4">
-        <div class="">
-            <img src="${u.img}" class="rounded img2" alt="avt">
-        </div>
-    </div>
-
-
-    <div class="col-sm-8">
-        <div class="information">
-            <div>
-                <h5 class="bold">Web Developer</h5>
-                <h3 class="bolder">${u.username}</h3>
-                <p class="dark-gray">"${u.email}"</p>
-            </div>
-            <div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h4>Education</h4>
-                        <p class="dark-gray">IT engineer from Nong Lam University.<br>
-                            ID Student: 19130211.</p>
-                        </br>
-                        <h4>Skills</h4>
-                        <p class="dark-gray">HTML, CSS, JavaScript, Java, C#,...</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <h4>Certificates</h4>
-                        <p class="dark-gray">2021 - learn at Nong Lam University</p>
-                        <h4>Contact Information</h4>
-                        <div class="row">
-                            <div class="col-sm-1"><i class="fas fa-map-marker-alt" style="color: #ad9463"></i></div>
-                            <div class="col-sm-11 dark-gray">Bien Hoa City</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-1"><i class="fas fa-phone-volume" style="color: #ad9463"></i></div>
-                            <div class="col-sm-11 dark-gray">${u.phone}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="" style="margin-top: 25px">
-                <h4>Skills Progress</h4>
-                <div class="progress" style="height: 25px">
-                    <div class="progress-bar bg-secondary" style="width:75%">HTML</div>
-                </div>
-                </br>
-                <div class="progress" style="height: 25px">
-                    <div class="progress-bar bg-secondary" style="width:80%">CSS</div>
-                </div>
-                </br>
-                <div class="progress" style="height: 25px">
-                    <div class="progress-bar bg-secondary" style="width:50%">JS</div>
-                </div>
-                </br>
-                <div class="progress" style="height: 25px">
-                    <div class="progress-bar bg-secondary" style="width:90%">C#</div>
-                </div>
+<jsp:useBean id="user2" scope="request" type="java.util.List"/>
+<c:forEach var="u" items="${user2}">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="">
+                <img src="${u.img}" class="rounded img2" alt="avt">
             </div>
         </div>
-    </div>
-</div>
-</:c:forEach>
 
+
+        <div class="col-sm-8">
+            <div class="information">
+                <div>
+                    <h5 class="bold">Web Developer</h5>
+                    <h3 class="bolder">${u.username}</h3>
+                    <p class="dark-gray">"${u.email}"</p>
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h4>Education</h4>
+                            <p class="dark-gray">IT engineer from Nong Lam University.<br>
+                                ID Student: 19130211.</p>
+                            </br>
+                            <h4>Skills</h4>
+                            <p class="dark-gray">HTML, CSS, JavaScript, Java, C#,...</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <h4>Certificates</h4>
+                            <p class="dark-gray">2021 - learn at Nong Lam University</p>
+                            <h4>Contact Information</h4>
+                            <div class="row">
+                                <div class="col-sm-1"><i class="fas fa-map-marker-alt" style="color: #ad9463"></i></div>
+                                <div class="col-sm-11 dark-gray">Bien Hoa City</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1"><i class="fas fa-phone-volume" style="color: #ad9463"></i></div>
+                                <div class="col-sm-11 dark-gray">${u.phone}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="" style="margin-top: 25px">
+                    <h4>Skills Progress</h4>
+                    <div class="progress" style="height: 25px">
+                        <div class="progress-bar bg-secondary" style="width:75%">HTML</div>
+                    </div>
+                    </br>
+                    <div class="progress" style="height: 25px">
+                        <div class="progress-bar bg-secondary" style="width:80%">CSS</div>
+                    </div>
+                    </br>
+                    <div class="progress" style="height: 25px">
+                        <div class="progress-bar bg-secondary" style="width:50%">JS</div>
+                    </div>
+                    </br>
+                    <div class="progress" style="height: 25px">
+                        <div class="progress-bar bg-secondary" style="width:90%">C#</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</c:forEach>
 <footer class="page-footer font-large bg-secondary pt-4" style="margin-top: 25px;color: black">
     <div class="container">
         <ul class="list-unstyled list-inline text-center">
