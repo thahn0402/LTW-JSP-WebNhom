@@ -33,7 +33,7 @@ public class UserDao {
                 .mapToBean(User.class).stream().collect(Collectors.toList()));
         if (users.size() == 1) {
             User user = users.get(0);
-            if (user.getPassword().equalsIgnoreCase(password)) {
+            if (user.getPassword().equalsIgnoreCase(hashPassword(password))) {
                 user.setPassword(null);
                 return user;
             }

@@ -38,33 +38,37 @@
             <a class="nav-link" href="index.jsp">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Room & Suites</a>
+            <a class="nav-link" href="about.jsp">About</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                Gallery
+            <a class="nav-link dropdown-toggle" href="room.jsp" data-toggle="dropdown">
+                Room & Suites
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Link 1</a>
-                <a class="dropdown-item" href="#">Link 2</a>
-                <a class="dropdown-item" href="#">Link 3</a>
-            </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="" data-toggle="dropdown">
-                News
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Link 1</a>
-                <a class="dropdown-item" href="#">Link 2</a>
-                <a class="dropdown-item" href="#">Link 3</a>
+                <a class="dropdown-item" href="room.jsp">Rooms</a>
+                <a class="dropdown-item" href="SingleRoomList">Single Room</a>
+                <a class="dropdown-item" href="DoubleRoomList">Double Room</a>
+                <a class="dropdown-item" href="SuperiorRoomList">Superior Room</a>
+                <a class="dropdown-item" href="FamilyRoomList">Family Room</a>
+                <a class="dropdown-item" href="ExecutiveRoomList">Executive Room</a>
+                <a class="dropdown-item" href="VipSuiteList">VIP Suite</a>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="gallery.jsp">Gallery</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                Foods
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="breakfast.jsp">Breakfast</a>
+                <a class="dropdown-item" href="lunch.jsp">Lunch</a>
+                <a class="dropdown-item" href="dinner.jsp">Dinner</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contact.jsp">Contact</a>
         </li>
         <li>
             <form class="form-inline" action="/action_page.php">
@@ -76,8 +80,9 @@
         </li>
     </ul>
 </nav>
+
 <div class="container1">
-    <form action="/LTW_JSP_WebNhom_war_exploded/Login" method="post">
+    <form action="/LTW_JSP_WebNhom_war/Login" method="post">
         <%
             if (error != null) {
         %>

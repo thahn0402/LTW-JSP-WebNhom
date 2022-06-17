@@ -23,7 +23,7 @@ public class Register extends HttpServlet {
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
         if (UserService.getInstance().register(username, password, fullname, email, phone)) {
-            response.sendRedirect("/LTW_JSP_WebNhom_war_exploded/login.jsp");
+            response.sendRedirect("/LTW_JSP_WebNhom_war/login.jsp");
         } else {
 //            add error message
             request.setAttribute("error", "Register fall, Username Exist.");

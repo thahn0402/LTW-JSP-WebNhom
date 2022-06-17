@@ -76,7 +76,7 @@
     </ul>
 </nav>
 <div class="container1">
-    <form action="/LTW_JSP_WebNhom_war_exploded/Register" method="post">
+    <form action="/LTW_JSP_WebNhom_war/Register" method="post">
         <%
             if (error != null) {
         %>
