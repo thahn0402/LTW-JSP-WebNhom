@@ -16,12 +16,12 @@ import java.util.List;
 public class ProfileUser extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        HttpSession session = request.getSession(false);
         String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        User user = UserService.getInstance().checkLogin(username, password);
-        User user1 = UserService.getInstance().getInfor(username);
+        User user = UserService.getInstance().getInfor(username);
         List<User> user2 = new ArrayList<>();
-        user2.add(user1);
+        user2.add(user);
         request.setAttribute("user2", user2);
         request.getRequestDispatcher("profileUser.jsp").forward(request, response);
 

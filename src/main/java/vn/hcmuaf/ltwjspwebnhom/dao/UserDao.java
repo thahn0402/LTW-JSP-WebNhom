@@ -1,17 +1,19 @@
 package vn.hcmuaf.ltwjspwebnhom.dao;
 
+import vn.hcmuaf.ltwjspwebnhom.beans.Room;
 import vn.hcmuaf.ltwjspwebnhom.beans.User;
 import vn.hcmuaf.ltwjspwebnhom.db.DBConnect;
 import vn.hcmuaf.ltwjspwebnhom.db.JDBIConnector;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class UserDao {
     private static UserDao userDao;
+    private Connection connection;
 
     private UserDao() {
     }
@@ -70,12 +72,20 @@ public class UserDao {
     }
 
     public User getInfor(String username) {
-        return JDBIConnector.get().withHandle(h -> {
-            return h.createQuery("select * from user where username = ?")
-                    .bind(0,username)
-                    .mapToBean(User.class)
-                    .first();
-        });
+        Statement statement = DBConnect.getInstance().get();
+        if (statement == null) return null;
+        String sql = "SELECT  * FROM user where username = '" + username
+                + "'";
+        List<User> users = JDBIConnector.get().withHandle(handle -> handle.createQuery("SELECT  * FROM user where username =  ?")
+                .bind(0, username)
+                .mapToBean(User.class).stream().collect(Collectors.toList()));
+        if (users.size() == 1) {
+            User user = users.get(0);
+
+                return user;
+
+        }
+        return null;
     }
 
 

@@ -123,6 +123,11 @@
                     </button>
                 </form>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Logout">
+                    <i class="fas fa-sign-out-alt fa-1x"> </i>
+                </a>
+            </li>
         </ul>
     </nav>
 </c:if>
@@ -179,13 +184,13 @@
                 </form>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="contact.jsp">
+                <a class="nav-link" href="">
                     <i class="fas fa-shopping-cart fa-1x"> </i>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="contact.jsp">
+                <a class="nav-link" href="Logout">
                     <i class="fas fa-sign-out-alt fa-1x"> </i>
                 </a>
             </li>

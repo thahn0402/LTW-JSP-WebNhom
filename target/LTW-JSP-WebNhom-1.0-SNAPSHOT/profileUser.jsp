@@ -80,7 +80,7 @@
         </ul>
     </nav>
 </c:if>
-<c:if test="${sessionScope.auth!=null}">
+<c:if test="${sessionScope.auth!=null&&sessionScope.auth.role==0}">
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top justify-content-center">
         <a class="navbar-brand" href="index.jsp">
             <img src="img/logo/LTW2021.png" alt="Logo" style="width:100px" class="rounded-circle">
@@ -126,10 +126,80 @@
                 <form class="form-inline" action="/action_page.php">
                     <input class="form-control mr-sm-2" type="text" placeholder="Search">
                     <button type="button" class="btn bt-view-all" href="admin.jsp"><a href="admin.jsp"
+                                                                                      style="color: whitesmoke">Manager</a>
+                    </button>
+                </form>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Logout">
+                    <i class="fas fa-sign-out-alt fa-1x"> </i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</c:if>
+
+<c:if test="${sessionScope.auth!=null&&sessionScope.auth.role==1}">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top justify-content-center">
+        <a class="navbar-brand" href="index.jsp">
+            <img src="img/logo/LTW2021.png" alt="Logo" style="width:100px" class="rounded-circle">
+        </a>
+        <ul class="navbar-nav ">
+            <li class="nav-item">
+                <a class="nav-link" href="index.jsp">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.jsp">About</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="room.jsp" data-toggle="dropdown">
+                    Room & Suites
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="room.jsp">Rooms</a>
+                    <a class="dropdown-item" href="SingleRoomList">Single Room</a>
+                    <a class="dropdown-item" href="DoubleRoomList">Double Room</a>
+                    <a class="dropdown-item" href="SuperiorRoomList">Superior Room</a>
+                    <a class="dropdown-item" href="FamilyRoomList">Family Room</a>
+                    <a class="dropdown-item" href="ExecutiveRoomList">Executive Room</a>
+                    <a class="dropdown-item" href="VipSuiteList">VIP Suite</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="gallery.jsp">Gallery</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                    Foods
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="breakfast.jsp">Breakfast</a>
+                    <a class="dropdown-item" href="lunch.jsp">Lunch</a>
+                    <a class="dropdown-item" href="dinner.jsp">Dinner</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.jsp">Contact</a>
+            </li>
+            <li>
+                <form class="form-inline" action="/action_page.php">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button type="button" class="btn bt-view-all" href="admin.jsp"><a href="ProfileUser"
                                                                                       style="color: whitesmoke">My
                         Profile</a>
                     </button>
                 </form>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    <i class="fas fa-shopping-cart fa-1x"> </i>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="Logout">
+                    <i class="fas fa-sign-out-alt fa-1x"> </i>
+                </a>
             </li>
         </ul>
     </nav>
@@ -150,23 +220,23 @@
         <div class="col-sm-8">
             <div class="information">
                 <div>
-                    <h5 class="bold">Web Developer</h5>
-                    <h3 class="bolder">${u.username}</h3>
+                    <h5 class="bold">Customer</h5>
+                    <h3 class="bolder">${u.fullname}</h3>
                     <p class="dark-gray">"${u.email}"</p>
                 </div>
                 <div>
                     <div class="row">
                         <div class="col-sm-6">
-                            <h4>Education</h4>
-                            <p class="dark-gray">IT engineer from Nong Lam University.<br>
-                                ID Student: 19130211.</p>
+                            <h4>V.I.P</h4>
+                            <p class="dark-gray"><br>
+                                </p>
                             </br>
-                            <h4>Skills</h4>
-                            <p class="dark-gray">HTML, CSS, JavaScript, Java, C#,...</p>
+                            <h4>Orders</h4>
+                            <p class="dark-gray"></p>
                         </div>
                         <div class="col-sm-6">
                             <h4>Certificates</h4>
-                            <p class="dark-gray">2021 - learn at Nong Lam University</p>
+                            <p class="dark-gray"></p>
                             <h4>Contact Information</h4>
                             <div class="row">
                                 <div class="col-sm-1"><i class="fas fa-map-marker-alt" style="color: #ad9463"></i></div>
@@ -179,24 +249,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="" style="margin-top: 25px">
-                    <h4>Skills Progress</h4>
-                    <div class="progress" style="height: 25px">
-                        <div class="progress-bar bg-secondary" style="width:75%">HTML</div>
-                    </div>
-                    </br>
-                    <div class="progress" style="height: 25px">
-                        <div class="progress-bar bg-secondary" style="width:80%">CSS</div>
-                    </div>
-                    </br>
-                    <div class="progress" style="height: 25px">
-                        <div class="progress-bar bg-secondary" style="width:50%">JS</div>
-                    </div>
-                    </br>
-                    <div class="progress" style="height: 25px">
-                        <div class="progress-bar bg-secondary" style="width:90%">C#</div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>

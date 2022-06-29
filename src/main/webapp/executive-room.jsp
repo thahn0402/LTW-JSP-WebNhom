@@ -56,7 +56,7 @@
                         <a class="nav-link" href="gallery.jsp">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                             Foods
                         </a>
                         <div class="dropdown-menu">
@@ -72,14 +72,15 @@
                         <form class="form-inline" action="/action_page.php">
                             <input class="form-control mr-sm-2" type="text" placeholder="Search">
                             <button type="button" class="btn bt-view-all" href="login.jsp"><a href="login.jsp"
-                                                                                              style="color: whitesmoke">Log In</a>
+                                                                                              style="color: whitesmoke">Log
+                                In</a>
                             </button>
                         </form>
                     </li>
                 </ul>
             </nav>
         </c:if>
-        <c:if test="${sessionScope.auth!=null}">
+        <c:if test="${sessionScope.auth!=null&&sessionScope.auth.role==0}">
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top justify-content-center">
                 <a class="navbar-brand" href="index.jsp">
                     <img src="img/logo/LTW2021.png" alt="Logo" style="width:100px" class="rounded-circle">
@@ -109,7 +110,7 @@
                         <a class="nav-link" href="gallery.jsp">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                             Foods
                         </a>
                         <div class="dropdown-menu">
@@ -125,9 +126,80 @@
                         <form class="form-inline" action="/action_page.php">
                             <input class="form-control mr-sm-2" type="text" placeholder="Search">
                             <button type="button" class="btn bt-view-all" href="admin.jsp"><a href="admin.jsp"
-                                                                                              style="color: whitesmoke">My Profile</a>
+                                                                                              style="color: whitesmoke">Manager</a>
                             </button>
                         </form>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Logout">
+                            <i class="fas fa-sign-out-alt fa-1x"> </i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </c:if>
+
+        <c:if test="${sessionScope.auth!=null&&sessionScope.auth.role==1}">
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top justify-content-center">
+                <a class="navbar-brand" href="index.jsp">
+                    <img src="img/logo/LTW2021.png" alt="Logo" style="width:100px" class="rounded-circle">
+                </a>
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.jsp">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.jsp">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="room.jsp" data-toggle="dropdown">
+                            Room & Suites
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="room.jsp">Rooms</a>
+                            <a class="dropdown-item" href="SingleRoomList">Single Room</a>
+                            <a class="dropdown-item" href="DoubleRoomList">Double Room</a>
+                            <a class="dropdown-item" href="SuperiorRoomList">Superior Room</a>
+                            <a class="dropdown-item" href="FamilyRoomList">Family Room</a>
+                            <a class="dropdown-item" href="ExecutiveRoomList">Executive Room</a>
+                            <a class="dropdown-item" href="VipSuiteList">VIP Suite</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.jsp">Gallery</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                            Foods
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="breakfast.jsp">Breakfast</a>
+                            <a class="dropdown-item" href="lunch.jsp">Lunch</a>
+                            <a class="dropdown-item" href="dinner.jsp">Dinner</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.jsp">Contact</a>
+                    </li>
+                    <li>
+                        <form class="form-inline" action="/action_page.php">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                            <button type="button" class="btn bt-view-all" href="admin.jsp"><a href="ProfileUser"
+                                                                                              style="color: whitesmoke">My
+                                Profile</a>
+                            </button>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">
+                            <i class="fas fa-shopping-cart fa-1x"> </i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Logout">
+                            <i class="fas fa-sign-out-alt fa-1x"> </i>
+                        </a>
                     </li>
                 </ul>
             </nav>
